@@ -145,4 +145,8 @@ You need to prepare some information:
 
 - Need 20 email address, for tester. Then they need to keep the app installed for 14 days.
 
+**Change the asset link json with the HASH to sign from google play console**
+
+<img width="1552" alt="Screenshot 2025-06-11 at 09 01 19" src="https://github.com/user-attachments/assets/effc5eaa-8696-4b99-a67d-ffaf99838d9e" />
+
 **Yeay your app ready**
