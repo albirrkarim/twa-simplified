@@ -174,14 +174,19 @@ File: `app/manifests/AndroidManifest.xml`
 <br/>
 <br/>
 
-## How to build the APK & AAB file
+## How to build signed the APK & AAB file
 
 ![TWA](./docs/generate_sign.png)
+
+The AAB and APK must be signed with your keystore that you generate before. so it can match with the SHA256 on `assetslink.json` that you upload before on `https://yourwebsite.com/.well-known/assetlinks.json`
 
 In google play console you need the `.aab` file
 
 Try to product signed `.apk` release to try on your device.
 
+<br/>
+<br/>
+<br/>
 
 ## Upload to Google Play Console
 
