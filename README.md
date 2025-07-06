@@ -2,6 +2,11 @@
 
 ## A. Create some Empty Project in android studio
 
+Select `Empty Activity` from the menu
+
+<img width="1012" alt="image" src="https://github.com/user-attachments/assets/a0610e9d-751b-4f0b-acf6-b125c42f3f35" />
+
+
 ## B. Keystore
 
 The keystore is to sign the APK file. Keystore is to make .aab and .apk file.
@@ -121,6 +126,53 @@ dependencies {
     implementation ("com.google.androidbrowserhelper:androidbrowserhelper:2.4.0")
 }
 ```
+
+File: `app/manifests/AndroidManifest.xml`
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.YourApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.YourApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Intent filter for Trusted Web Activity -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="example.com" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+<br/>
+<br/>
+<br/>
 
 ## How to build the APK & AAB file
 
